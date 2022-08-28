@@ -37,52 +37,54 @@ const GetMeal = ({ meals }: any) => {
   if (meals.length < 1) return null;
 
   return (
-    <div className='flex flex-col items-center py-16'>
-      <div className='h-96 w-80'>
-        <Transition
-          as={Fragment}
-          show={isShowing}
-          enter='transform transition duration-[400ms]'
-          enterFrom='opacity-0 rotate-[-120deg] scale-50'
-          enterTo='opacity-100 rotate-0 scale-100'
-          leave='transform duration-200 transition ease-in-out'
-          leaveFrom='opacity-100 rotate-0 scale-100 '
-          leaveTo='opacity-0 scale-95 '
-        >
-          <div className='h-full w-full rounded-md bg-red-300 shadow-lg p-3'>
-            <p className='text-center text-2xl font-bold text-gray-700'>
-              {meals[index].name}
-            </p>
-            <p className='text-center text-gray-700'>
-              {meals[index].description}
-            </p>
-            <p className='text-left text-gray-700 pt-2'>
-              <span className='font-bold'>Nutritional values</span>
-              <br />
-              Calories: {meals[index].calories}g
-              <br />
-              Protein: {meals[index].protein}g
-              <br />
-              Carb: {meals[index].carbohydrate}g
-              <br />
-              Fat: {meals[index].fat}g
-            </p>
+    <div className='flex flex-col items-center py-8 '>
+      <div className='h-[450px] w-80'>
+        <div>
+          <Transition
+            as={Fragment}
+            show={isShowing}
+            enter='transform transition duration-[400ms]'
+            enterFrom='opacity-0 rotate-[-120deg] scale-50'
+            enterTo='opacity-100 rotate-0 scale-100'
+            leave='transform duration-200 transition ease-in-out'
+            leaveFrom='opacity-100 rotate-0 scale-100 '
+            leaveTo='opacity-0 scale-95 '
+          >
+            <div className='h-full w-full rounded-md bg-red-300 shadow-lg p-3'>
+              <p className='text-center text-2xl font-bold text-gray-700'>
+                {meals[index].name}
+              </p>
+              <p className='text-center text-gray-700'>
+                {meals[index].description}
+              </p>
+              <p className='text-left text-gray-700 pt-2'>
+                <span className='font-bold'>Nutritional values</span>
+                <br />
+                Calories: {meals[index].calories}g
+                <br />
+                Protein: {meals[index].protein}g
+                <br />
+                Carb: {meals[index].carbohydrate}g
+                <br />
+                Fat: {meals[index].fat}g
+              </p>
 
-            <p className='text-left text-gray-700 pt-2'>
-              <span className='font-bold'>Ingredients</span>
-            </p>
-            {meals[index].ingredients.map((element: any) => {
-              return (
-                <button
-                  key={element.id}
-                  className='inline-flex justify-center rounded-md border border-transparent shadow-sm m-1 p-1 bg-red-400 text-base font-medium text-white hover:bg-red-500 ml-1 w-auto text-xs'
-                >
-                  {element.name} {element.weight}g
-                </button>
-              );
-            })}
-          </div>
-        </Transition>
+              <p className='text-left text-gray-700 pt-2'>
+                <span className='font-bold'>Ingredients</span>
+              </p>
+              {meals[index].ingredients.map((element: any) => {
+                return (
+                  <button
+                    key={element.id}
+                    className='inline-flex justify-center rounded-md border border-transparent shadow-sm m-1 p-1 bg-red-400 text-base font-medium text-white hover:bg-red-500 ml-1 w-auto text-xs'
+                  >
+                    {element.name} {element.weight}g
+                  </button>
+                );
+              })}
+            </div>
+          </Transition>
+        </div>
       </div>
       <button
         onClick={async () => {
