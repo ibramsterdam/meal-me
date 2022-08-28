@@ -46,7 +46,8 @@ const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 const GetMeal = ({ meals }: any) => {
   const [isShowing, setIsShowing] = useState(true);
   const [index, setIndex] = useState(0);
-  console.log(meals[index]);
+
+  if (meals.length < 1) return null;
 
   return (
     <div className='flex flex-col items-center py-16'>
@@ -71,13 +72,13 @@ const GetMeal = ({ meals }: any) => {
             <p className='text-left text-gray-700 pt-2'>
               <span className='font-bold'>Nutritional values</span>
               <br />
-              Calories: {meals[index].calories}
+              Calories: {meals[index].calories}g
               <br />
-              Protein: {meals[index].protein}
+              Protein: {meals[index].protein}g
               <br />
-              Carbs: {meals[index].carbohydrate}
+              Carb: {meals[index].carbohydrate}g
               <br />
-              Fats: {meals[index].fat}
+              Fat: {meals[index].fat}g
             </p>
 
             <p className='text-left text-gray-700 pt-2'>
@@ -89,9 +90,9 @@ const GetMeal = ({ meals }: any) => {
               return (
                 <button
                   key={element.id}
-                  className='w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-400 text-base font-medium text-white hover:bg-red-500 sm:ml-3 sm:w-auto sm:text-sm'
+                  className='w-full inline-flex justify-center rounded-md border border-transparent shadow-sm m-1 p-2 bg-red-400 text-base font-medium text-white hover:bg-red-500 sm:w-auto sm:text-sm'
                 >
-                  {element.weight}g {element.name}
+                  {element.name} {element.weight}g
                 </button>
               );
             })}
