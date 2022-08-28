@@ -72,8 +72,6 @@ const GetMeal = ({ meals }: any) => {
               <span className='font-bold'>Ingredients</span>
             </p>
             {meals[index].ingredients.map((element: any) => {
-              console.log("oi", element);
-
               return (
                 <button
                   key={element.id}
