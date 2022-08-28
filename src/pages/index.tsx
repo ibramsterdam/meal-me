@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
 const GetMeal = ({ meals }: any) => {
   const [isShowing, setIsShowing] = useState(true);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(Math.floor(Math.random() * meals.length));
 
   if (meals.length < 1) return null;
 
