@@ -116,7 +116,7 @@ const GetMeal = ({ meals }: any) => {
             strokeWidth='1.5'
           />
         </svg>
-        <span className='ml-3 '>Give me a meal !</span>
+        <span className='ml-3 '>Give me a meal!</span>
       </button>
     </div>
   );
