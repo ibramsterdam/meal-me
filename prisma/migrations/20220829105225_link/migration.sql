@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Meal` ADD COLUMN `link` VARCHAR(191) NULL;

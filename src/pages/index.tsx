@@ -82,6 +82,12 @@ const GetMeal = ({ meals }: any) => {
                   </button>
                 );
               })}
+
+              <p className='text-center text-gray-700 pt-2'>
+                <a href={meals[index].link} className='font-bold'>
+                  Food Link
+                </a>
+              </p>
             </div>
           </Transition>
         </div>

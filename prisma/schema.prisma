@@ -23,6 +23,7 @@ model Meal {
     fat          Float
     carbohydrate Float
     calories     Float
+    link         String?
 
     ingredients Ingredient[]
 }
